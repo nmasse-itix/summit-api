@@ -2,13 +2,13 @@
 	"info": {
 		"_postman_id": "b9a371c6-524a-4751-94c4-6a9b18e20762",
 		"name": "Summit API",
-		"description": "An API that gives information about the Red Hat Summit.",
+		"description": "version=0.1 - Summit API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "location",
-			"description": "Folder for location",
+			"description": "",
 			"item": [
 				{
 					"name": "Get Next RH Summit Location",
@@ -21,7 +21,7 @@
 					},
 					"response": [
 						{
-							"id": "321cab01-1c89-42de-9e4e-387d0cf9a584",
+							"id": "21f87cc4-352b-4a02-99e4-ebefd673e220",
 							"name": "Get Next RH Summit Location",
 							"originalRequest": {
 								"method": "GET",
@@ -46,7 +46,51 @@
 						}
 					]
 				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "68e8d5e3-e625-4ffe-9279-a5a418e13632",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "9b2a810e-28ec-42f3-ade9-324fac1e0687",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
 			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "e6343d08-ec68-40a7-8ebb-96092342cc6e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "cd2a2499-e84e-4bce-9c5e-c7c44923ec6d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }
