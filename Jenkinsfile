@@ -22,6 +22,9 @@ node('nodejs') {
     // For Jenkinsfile from GIT
     checkout scm
 
+    echo "${gitBranch}"
+    sh 'false'
+
     // for inline scripts
     //git url: gitRepo
   }
