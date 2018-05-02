@@ -3,22 +3,21 @@ swagger: 2.0
 info:
   title: Summit API
   description: An API that gives information about the Red Hat Summit.
-  version: 2.0.0
+  version: 1.0.0
 paths:
   /location:
     get:
       summary: Get Next RH Summit Location
       description: 'Get the location of the next RedHat Summit '
       operationId: GetLocation
+      x-threescale-smoketests-operation: true
       responses:
         200:
           description: OK
 security:
-- oidc:
-  - openid
+- apikey: []
 securityDefinitions:
-  oidc:
-    type: oauth2
-    flow: accessCode
-    scopes:
-      openid: Get an OpenID Connect token
+  apikey:
+    name: api-key
+    in: header
+    type: apiKey
