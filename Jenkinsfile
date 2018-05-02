@@ -13,6 +13,7 @@ node('nodejs') {
     gitRepo = scm.getUserRemoteConfigs()[0].getUrl()
     gitBranch = sh(returnStdout: true, script: 'git rev-parse --abbrev-ref HEAD').trim()
 
+    sh 'env'
     echo "${gitRepo} ${gitBranch}"
     sh 'false'
 
