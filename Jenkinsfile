@@ -2,32 +2,32 @@
 import groovy.json.JsonOutput
 
 // for inline scripts
-//def gitRepo = "https://github.com/nmasse-itix/summit-api.git"
-//def gitBranch = "master"
-
-// For Jenkinsfile from GIT
-def gitRepo = scm.getUserRemoteConfigs()[0].getUrl()
-def gitBranch = scm.getUserRemoteConfigs()[0].getRefspec()
+def gitRepo
+def gitBranch
 
 node('nodejs') {
+  // Get Source Code from SCM (Git) as configured in the Jenkins Project
+  stage('Checkout Source') {
+    // For Jenkinsfile from GIT
+    checkout scm
+    gitRepo = scm.getUserRemoteConfigs()[0].getUrl()
+    gitBranch = scm.getUserRemoteConfigs()[0].getRefspec()
+
+    echo "${gitRepo} ${gitBranch}"
+    sh 'false'
+
+    // for inline scripts
+    //git url: gitRepo
+    //gitRepo = "https://github.com/nmasse-itix/summit-api.git"
+    //gitBranch = "master"
+  }
+
   def towerExtraVars = [
       git_repo: gitRepo,
       git_branch: gitBranch,
       threescale_cicd_api_backend_hostname: params.OPENSHIFT_SERVICE_NAME,
       threescale_cicd_api_backend_scheme: "http"
   ]
-
-  // Get Source Code from SCM (Git) as configured in the Jenkins Project
-  stage('Checkout Source') {
-    // For Jenkinsfile from GIT
-    checkout scm
-
-    echo "${gitBranch}"
-    sh 'false'
-
-    // for inline scripts
-    //git url: gitRepo
-  }
 
   def thisPackage = readJSON file: 'package.json'
   def currentVersion = thisPackage.version
