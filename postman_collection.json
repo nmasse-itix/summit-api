@@ -1,8 +1,8 @@
 {
 	"info": {
-		"_postman_id": "a25de07c-b783-49d4-b108-ae9f2c0a95ee",
-		"name": "Summit API v1.0",
-		"description": "version=1.0 - An API that gives information about the Red Hat Summit.",
+		"_postman_id": "862a425d-2e15-426b-b912-fa2860b557b8",
+		"name": "Summit API v1.1",
+		"description": "version=1.1 - An API that gives information about the Red Hat Summit.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
@@ -21,7 +21,7 @@
 					},
 					"response": [
 						{
-							"id": "d7fd3b2d-02f0-4a6e-a0bf-53abec702564",
+							"id": "89409a78-7e8b-44df-a6df-9b4fd7793b65",
 							"name": "Get Next RH Summit Location",
 							"originalRequest": {
 								"method": "GET",
@@ -63,7 +63,7 @@
 					},
 					"response": [
 						{
-							"id": "2817883b-3904-4f41-9c25-07f1c776f9c5",
+							"id": "e384f705-0ac9-4102-99e4-d5670f1f794e",
 							"name": "Get Next RH Summit Timeframe",
 							"originalRequest": {
 								"method": "GET",
@@ -84,7 +84,49 @@
 								}
 							],
 							"cookie": [],
-							"body": "{ \"From\": \"08/05/2018\", \"To\": \"10/05/2018\" }"
+							"body": "{ \"From\": \"08/05/2018\", \"To\": \"10/05/2018\" }"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "participants",
+			"description": "Folder for participants",
+			"item": [
+				{
+					"name": "Get all participants",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": "http:///participants",
+						"description": "Get a list of all participants"
+					},
+					"response": [
+						{
+							"id": "0320da48-c5df-485f-9eb8-e65ef54c9d3a",
+							"name": "Get all participants",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": "http:///participants"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text",
+									"name": "Content-Type"
+								}
+							],
+							"cookie": [],
+							"body": "[ \"Mark\", \"Nicolas\" ]"
 						}
 					]
 				}
@@ -95,7 +137,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "d7492972-0882-41d3-9d22-6e70a8ead909",
+				"id": "391f2368-9e96-4bd1-9f9c-5302e74fcf04",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -105,7 +147,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "fb06a1e7-cb4e-4172-9470-f3d80efd453d",
+				"id": "076cc377-aa7a-4bf2-8573-486db1b45999",
 				"type": "text/javascript",
 				"exec": [
 					""
