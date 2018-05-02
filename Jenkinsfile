@@ -11,7 +11,7 @@ node('nodejs') {
     // For Jenkinsfile from GIT
     checkout scm
     gitRepo = scm.getUserRemoteConfigs()[0].getUrl()
-    gitBranch = scm.getUserRemoteConfigs()[0].getRefspec()
+    gitBranch = sh(returnStdout: true, script: 'git rev-parse --abbrev-ref HEAD').trim()
 
     echo "${gitRepo} ${gitBranch}"
     sh 'false'
