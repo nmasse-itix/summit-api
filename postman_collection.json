@@ -1,14 +1,14 @@
 {
 	"info": {
-		"_postman_id": "b9a371c6-524a-4751-94c4-6a9b18e20762",
-		"name": "Summit API",
-		"description": "version=0.1 - Summit API",
+		"_postman_id": "a25de07c-b783-49d4-b108-ae9f2c0a95ee",
+		"name": "Summit API v1.0",
+		"description": "version=1.0 - An API that gives information about the Red Hat Summit.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "location",
-			"description": "",
+			"description": "Folder for location",
 			"item": [
 				{
 					"name": "Get Next RH Summit Location",
@@ -21,7 +21,7 @@
 					},
 					"response": [
 						{
-							"id": "21f87cc4-352b-4a02-99e4-ebefd673e220",
+							"id": "d7fd3b2d-02f0-4a6e-a0bf-53abec702564",
 							"name": "Get Next RH Summit Location",
 							"originalRequest": {
 								"method": "GET",
@@ -31,7 +31,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": "json",
+							"_postman_previewlanguage": "",
 							"header": [
 								{
 									"key": "Content-Type",
@@ -42,31 +42,51 @@
 								}
 							],
 							"cookie": [],
-							"body": "{ \"location\": \"SFO\" }"
+							"body": "{ \"Location\": \"SFO\" }"
 						}
 					]
 				}
-			],
-			"event": [
+			]
+		},
+		{
+			"name": "timeframe",
+			"description": "Folder for timeframe",
+			"item": [
 				{
-					"listen": "prerequest",
-					"script": {
-						"id": "68e8d5e3-e625-4ffe-9279-a5a418e13632",
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"id": "9b2a810e-28ec-42f3-ade9-324fac1e0687",
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
+					"name": "Get Next RH Summit Timeframe",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": "http:///timeframe",
+						"description": "Get the timeframe of the next RedHat Summit."
+					},
+					"response": [
+						{
+							"id": "2817883b-3904-4f41-9c25-07f1c776f9c5",
+							"name": "Get Next RH Summit Timeframe",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": "http:///timeframe"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text",
+									"name": "Content-Type"
+								}
+							],
+							"cookie": [],
+							"body": "{ \"From\": \"08/05/2018\", \"To\": \"10/05/2018\" }"
+						}
+					]
 				}
 			]
 		}
@@ -75,7 +95,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "e6343d08-ec68-40a7-8ebb-96092342cc6e",
+				"id": "d7492972-0882-41d3-9d22-6e70a8ead909",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -85,7 +105,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "cd2a2499-e84e-4bce-9c5e-c7c44923ec6d",
+				"id": "fb06a1e7-cb4e-4172-9470-f3d80efd453d",
 				"type": "text/javascript",
 				"exec": [
 					""
