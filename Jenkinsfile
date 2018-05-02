@@ -21,6 +21,7 @@ node('nodejs') {
       git_repo: gitRepo,
       git_branch: gitBranch,
       threescale_cicd_api_backend_hostname: params.OPENSHIFT_SERVICE_NAME,
+      threescale_cicd_openapi_smoketest_operation: "GetLocation",
       threescale_cicd_api_backend_scheme: "http"
   ]
 
