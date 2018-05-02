@@ -1,26 +1,20 @@
 #!/usr/bin/env groovy
 import groovy.json.JsonOutput
 
-// for inline scripts
-def gitRepo
-def gitBranch
+def gitRepo = ""
+def gitBranch = params.GIT_BRANCH != null && params.GIT_BRANCH != "" ? params.GIT_BRANCH : "master"
 
 node('nodejs') {
   // Get Source Code from SCM (Git) as configured in the Jenkins Project
   stage('Checkout Source') {
     // For Jenkinsfile from GIT
-    checkout scm
-    gitRepo = scm.getUserRemoteConfigs()[0].getUrl()
-    gitBranch = sh(returnStdout: true, script: 'git rev-parse --abbrev-ref HEAD').trim()
-
-    sh 'env'
-    echo "${gitRepo} ${gitBranch}"
-    sh 'false'
-
-    // for inline scripts
-    //git url: gitRepo
-    //gitRepo = "https://github.com/nmasse-itix/summit-api.git"
-    //gitBranch = "master"
+    if (gitRepo == null || gitRepo == "") {
+      checkout scm
+      gitRepo = scm.getUserRemoteConfigs()[0].getUrl()
+    } else {
+      // for inline scripts
+      git url: gitRepo, branch: gitBranch
+    }
   }
 
   def towerExtraVars = [
