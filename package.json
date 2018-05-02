@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "A demo showing CI/CD with 3scale AMP",
   "main": "server.js",
-  "scripts": {},
+  "scripts": {
+    "test": "true"
+  },
   "author": "Nicolas MASSE",
   "repository": "https://github.com/nmasse-itix/summit-api.git",
   "license": "MIT",
