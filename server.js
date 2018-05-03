@@ -22,14 +22,12 @@ router.get("/timeframe",function(req, res) {
      .end();
 });
 
-/*
 router.get("/participants",function(req, res) {
   var response = [ "Mark", "Nicolas" ];
   res.type('application/json')
      .send(JSON.stringify(response))
      .end();
 });
-*/
 
 app.use("/",router);
 
