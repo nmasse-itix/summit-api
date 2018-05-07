@@ -1,7 +1,7 @@
 ---
 swagger: 2.0
 info:
-  title: Summit API v2.0 - OpenID Connect
+  title: Summit API
   description: An API that gives information about the Red Hat Summit, secured with
     OpenID Connect.
   version: 2.0.0
